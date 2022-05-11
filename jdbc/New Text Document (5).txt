@@ -1,0 +1,95 @@
+import java.sql.*;
+import java.util.Scanner;
+public class Employ_login {
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+        String url="jdbc:oracle:thin:@localhost:1521:xe";
+        int employe_id;
+        String employe_username="";
+        String employe_password="";
+        String emo_name="";
+        int count=0,count1=0;
+        System.out.println("Enter your username");
+        employe_username=sc.nextLine();
+        System.out.println("Enter your password");
+        employe_password=sc.nextLine();
+        System.out.println("Enter your empid");
+        employe_id=sc.nextInt();
+        try {
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        System.out.println("Driver load");
+        Connection con=DriverManager.getConnection(url,"SYSTEM","system123");
+        System.out.println("connection made");
+        Statement st= con.createStatement(); 
+        ResultSet rs=st.executeQuery("select * from BankEmploye");
+        while(rs.next())
+        	{
+        	count=count+1;
+        	if(rs.getInt(1)==employe_id && rs.getString(2).equals(employe_username) && rs.getString(3).equals(employe_password))
+        	{
+        	String name1=rs.getString("Emp_name");//To print a particular data
+        	System.out.print("WELCOME BACK "+name1);
+        	}
+        	else
+        	{
+        		count1=count1+1;
+        	}
+        	
+        	}
+        if(count==count1)
+        {
+        	System.out.println("NOT A VALID USER");
+        }
+        }
+        catch(Exception e)
+        {
+        	System.out.print("Exception");
+        	
+        }
+        
+    }
+
+}
+
+
+
+
+
+
+
+
+if(breading.equals("YES"))
+		{
+			count=count+3;
+		}
+		if(chestpain.equals("YES"))
+		{
+			count=count+4;
+		}
+		if(cough.equals("YES"))
+		{
+			count=count+1;
+		}
+		if(feabour.equals("YES"))
+		{
+			count=count+2;
+		}
+		
+		if(count>=7)
+		{
+			str="High chance of corona";
+		}
+		else if(count>=4 && count<7)
+		{
+			str="Average chance of corona";
+		}
+		else
+		{
+			str="No chance of corona";
+		}
+
+
+
+
+
+

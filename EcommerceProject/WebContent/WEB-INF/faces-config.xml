@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+	<managed-bean>
+		<managed-bean-name>customerBean</managed-bean-name>
+		<managed-bean-class>com.OnlineShopping.CustomerBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+	 <display-name>login</display-name>
+	  <from-view-id>login.jsp</from-view-id> 
+	  <navigation-case> <from-outcome>loginFail</from-outcome> 
+	  <to-view-id>loginFail.jsp</to-view-id>
+	   </navigation-case> 
+	   </navigation-rule> 
+	   <navigation-rule> 
+	   <display-name>login</display-name> 
+	   <from-view-id>login.jsp</from-view-id> 
+	   <navigation-case> <from-outcome>index</from-outcome>
+	    <to-view-id>index.jsp</to-view-id>
+	     </navigation-case> 
+	     </navigation-rule> 
+	     <navigation-rule>
+	      		<display-name>login</display-name> 
+	      			<from-view-id>login.jsp</from-view-id> 
+	      			<navigation-case> <from-outcome>FailPage</from-outcome>
+	       				<to-view-id>FailPage.jsp</to-view-id> 
+	      			 </navigation-case>
+	       </navigation-rule>
+	 </faces-config>
+

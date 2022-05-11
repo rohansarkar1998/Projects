@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+	<managed-bean>
+		<managed-bean-name>coronaBean</managed-bean-name>
+		<managed-bean-class>com.corona.CoronaBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+	 <display-name>Signup</display-name>
+	  <from-view-id>/Signup.jsp</from-view-id> 
+	  <navigation-case> <from-outcome>Success</from-outcome>
+	   <to-view-id>/Success.jsp</to-view-id> 
+	   </navigation-case>
+	    </navigation-rule>
+	    <navigation-rule>
+	 <display-name>Signup</display-name>
+	  <from-view-id>/Signup.jsp</from-view-id> 
+	  <navigation-case> <from-outcome>Success</from-outcome>
+	   <to-view-id>/Success.jsp</to-view-id> 
+	   </navigation-case>
+	    </navigation-rule>
+	     <navigation-rule>
+	 <display-name>Signup</display-name>
+	  <from-view-id>/Signup.jsp</from-view-id> 
+	  <navigation-case> <from-outcome>Fail</from-outcome>
+	   <to-view-id>/Fail.jsp</to-view-id> 
+	   </navigation-case>
+	    </navigation-rule>
+	    <navigation-rule>
+	 <display-name>Signin</display-name>
+	  <from-view-id>/Signin.jsp</from-view-id> 
+	  <navigation-case> <from-outcome>TestYourself</from-outcome>
+	   <to-view-id>/TestYourself.jsp</to-view-id> 
+	   </navigation-case>
+	    </navigation-rule>
+	    <navigation-rule>
+	 <display-name>Signin</display-name>
+	  <from-view-id>/Signin.jsp</from-view-id> 
+	  <navigation-case> <from-outcome>Failfind</from-outcome>
+	   <to-view-id>/Failfind.jsp</to-view-id> 
+	   </navigation-case>
+	    </navigation-rule>
+	    <navigation-rule>
+	 <display-name>StatusCheek</display-name>
+	  <from-view-id>/StatusCheek.jsp</from-view-id> 
+	  <navigation-case> <from-outcome>ShowStatus</from-outcome>
+	   <to-view-id>/ShowStatus.jsp</to-view-id> 
+	   </navigation-case>
+	    </navigation-rule>
+	    <navigation-rule>
+	 <display-name>StatusCheek</display-name>
+	  <from-view-id>/StatusCheek.jsp</from-view-id> 
+	  <navigation-case> <from-outcome>Failcheck</from-outcome>
+	   <to-view-id>/Failcheck.jsp</to-view-id> 
+	   </navigation-case>
+	    </navigation-rule>
+	    
+
+</faces-config>

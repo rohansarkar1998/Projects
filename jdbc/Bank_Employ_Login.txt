@@ -1,0 +1,185 @@
+import java.sql.*;
+import java.util.Scanner;
+public class Employ_login {
+	public static void main(String[] args) {
+		Employ_login e1= new Employ_login();
+		e1.login();
+	}
+	public void login()
+	{
+		Scanner sc= new Scanner(System.in);
+        String url="jdbc:oracle:thin:@localhost:1521:xe";
+        int employe_id;
+        String employe_username="";
+        String employe_password="";
+        String emo_name="";
+        int count=0,count1=0;
+        System.out.println("Enter your username");
+        employe_username=sc.nextLine();
+        System.out.println("Enter your password");
+        employe_password=sc.nextLine();
+        System.out.println("Enter your empid");
+        employe_id=sc.nextInt();
+        try {
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        System.out.println("Driver load");
+        Connection con=DriverManager.getConnection(url,"SYSTEM","system123");
+        System.out.println("connection made");
+        Statement st= con.createStatement(); 
+        ResultSet rs=st.executeQuery("select * from BankEmploye");
+        while(rs.next())
+        	{
+        	count=count+1;
+        	if(rs.getInt(1)==employe_id && rs.getString(2).equals(employe_username) && rs.getString(3).equals(employe_password))
+        	{
+        	String name1=rs.getString("Emp_name");//To print a particular data
+        	System.out.println("WELCOME BACK "+name1);
+        	Banking_operation b1 = new Banking_operation();
+        	b1.Select_operation();
+        	}
+        	else
+        	{
+        		count1=count1+1;
+        	}
+        	
+        	}
+        if(count==count1)
+        {
+        	System.out.println("NOT A VALID USER");
+        	login();
+        }
+        }
+        catch(Exception e)
+        {
+        	System.out.print("Exception");
+        	
+        }
+       }
+}
+class Banking_operation
+{
+	Scanner sc= new Scanner(System.in);
+	int n,ch,ch1,accno,ammount,Accbalance,FinalBalance;
+	String url="jdbc:oracle:thin:@localhost:1521:xe";
+	public void Select_operation()
+	{
+		while(true)
+		{
+			System.out.println("1. PRESS 1 FOR TRANSACTION    2. PRESS 2 FOR CREAT ACCOUNT     3. PRESS 3 FOR REMOVE ACCOUNT");
+			ch = sc.nextInt();
+			switch(ch)
+			{
+			case 1:
+				Transaction();
+				break;
+			case 2:
+				Creat_Account();
+				break;
+			case 3:
+				Remove_Account();
+				break;
+			}	
+		}
+	}
+	public void Transaction()
+	{
+		System.out.println("1. PRESS 1 FOR DEPOSIT   2. PRESS 2 FOR WITHDRAW");
+		ch1=sc.nextInt();
+		switch(ch)
+		{
+		case 1:
+			Deposite();
+		case 2:
+			Withdral();
+		
+		}	
+	}
+	public void Deposite()
+	{
+		System.out.println("ENTER THE ACCOUNT NUMBER");
+		accno = sc.nextInt();
+		System.out.println("ENTER THE AMMOUNT");
+		ammount = sc.nextInt();
+		try {
+	        Class.forName("oracle.jdbc.driver.OracleDriver");
+	       // System.out.println("Driver load");
+	        Connection con=DriverManager.getConnection(url,"SYSTEM","system123");
+	        //System.out.println("connection made");
+	        Statement st= con.createStatement(); 
+	        ResultSet rs=st.executeQuery("select * from Bank");
+	        while(rs.next())
+        	{
+        	if(rs.getInt(1)==accno)
+        	{
+        		Accbalance = rs.getInt(3);
+        		FinalBalance= ammount+Accbalance;
+        		System.out.println(FinalBalance);
+        		Accbalance=FinalBalance;
+        		PreparedStatement st1= con.prepareStatement("update Bank set BALANCE = ? ");
+        		//st1.setInt(1, accno);
+                st1.setInt(3, Accbalance);
+                st1.executeUpdate();
+                con.close();   
+        	}
+        	}
+		}
+		   catch(Exception e)
+        {
+        	System.out.print("Exception");
+        	
+        }
+		
+	}
+	public void Withdral()
+	{
+		
+	}
+	public void Creat_Account()
+	{
+		int accno,balance,number;
+		String name;
+		System.out.println("ENTER THE NAME");
+		name=sc.next();
+		System.out.println("ENTER THE ACCOUNT NUMBER");
+		accno=sc.nextInt();
+		System.out.println("ENTER THE BALANCE ");
+		balance=sc.nextInt();
+		System.out.println("ENTER THE PHONE NUMBER");
+		number=sc.nextInt();
+		 try {
+		        Class.forName("oracle.jdbc.driver.OracleDriver");
+		        System.out.println("Driver load");
+		        Connection con=DriverManager.getConnection(url,"SYSTEM","system123");
+		        System.out.println("connection made");
+		        PreparedStatement st= con.prepareStatement("insert into Bank values(?,?,?,?)");
+		        st.setInt(1, accno);
+		        st.setString(2, name);
+		        st.setInt(3, balance);
+		        st.setInt(4, number);
+		        st.executeUpdate();
+		 }
+		 catch(Exception e)
+	        {
+	        	System.out.print("Exception");
+	        	
+	        }
+		 		
+	}
+		
+
+	public void Remove_Account()
+	{
+		
+	}
+	
+	 
+}
+
+
+
+
+
+
+
+
+

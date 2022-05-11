@@ -1,0 +1,67 @@
+Mobile 1 :
+
+Name - Realme C12 (3gb RAM)
+Price - Rs.8499
+Os & Processor Features
+Operating System Android 10
+Processor Type Mediatek Helio G35
+Processor Core Octa Core
+Primary Clock Speed 2.3 GHz
+Secondary Clock Speed 1.8 GHz
+Operating Frequency GSM: 850/900/1800/1900, WCDMA: B1/B5/B8, FDD LTE: B1/B3/B5/B8, TDD LTE: B38/B40/B41 (2535-2655 MHz)
+Memory & Storage Features
+Internal Storage 32 GB
+RAM 3 GB
+Expandable Storage 256 GB
+Supported Memory Card Type microSD
+Memory Card Slot Type Dedicated Slot
+Battery 6000 mAh
+
+Mobile 2:
+
+Name - Redmi Note 9 Pro Max
+Price - Rs.14999
+Os & Processor Features
+Operating System Android 10
+Processor Type Qualcomm Snapdragon 720G
+Processor Core Octa Core
+Primary Clock Speed 2.3 GHz
+Operating Frequency 2G GSM: B2/B3/B5/B8, 3G WCDMA: B1/B2/B5/B8, 4G LTE FDD: B1/B3/B5/B8, 4G LTE TDD: B40/B41 (2535-2655MHz)
+Memory & Storage Features
+Internal Storage 64 GB
+RAM 6 GB
+Expandable Storage 512 GB
+Supported Memory Card Type MicroSD
+Memory Card Slot Type Dedicated Slot
+Battery 5020 mAh
+
+Mobile 3:
+
+Name - Apple iPhone XR
+Price - Rs.38999
+Os & Processor Features
+Operating System iOS 12 | iOS 13 Compatible
+Processor Type A12 Bionic Chip
+Memory & Storage Features
+Internal Storage 64 GB
+15.49 cm (6.1 inch) Display
+Camera 12MP Rear Camera | 7MP Front Camera
+
+Mobile 4:
+
+Name - Moto E7 Plus
+Price - Rs.9499
+Os & Processor Features
+Operating System Android 10
+Processor Type Qualcomm Snapdragon 460
+Processor Core Octa Core
+Primary Clock Speed 1.8 GHz
+Operating Frequency 2G (GSM): B2/B3/B5/B8, 3G (WCDMA): B1/B2/B5/B8, 4G LTE: B1/B3/B5/B7/B8/B20/B38/B40/B41
+Memory & Storage Features
+Internal Storage 64 GB
+RAM 4 GB
+Expandable Storage 512 GB
+Supported Memory Card Type microSD
+Memory Card Slot Type Hybrid Slot
+Battery 5000 mAh
+

@@ -1,0 +1,430 @@
+import java.util.Scanner;
+
+class convertion
+{
+    //Scanner sc= new Scanner(System.in);
+    String word;
+    int len=0,num1 = 0,num2=0,num3=0,inum=0,inum2=0;
+    String con="";
+    String part1="";
+    String part2="";
+    String part3="";
+    String istr="";
+    String finalans="";
+    String con1="";
+    int num;
+
+    String value(int num)
+    {
+        String str3 = "";
+            if(num==1)
+            {
+                str3= "one";
+            }
+            if(num==2)
+            {
+                str3= "two";
+            }
+            if(num==3)
+            {
+                str3= "three";
+            }
+            if(num==4)
+            {
+                str3= "four";
+            }
+            if(num==5)
+            {
+                str3= "five";
+            }
+            if(num==6)
+            {
+                str3= "six";
+            }
+            if(num==7)
+            {
+                str3= "seven";
+            }
+            if(num==8)
+            {
+                str3= "eight";
+            }
+            if(num==9)
+            {
+                str3= "nine";
+            }
+
+        return str3;
+    }
+
+    String DoubleValue(int num2)
+    {
+        String str1= new String();
+        if(num2==10)
+        {
+            str1="ten";
+        }
+        if(num2==11)
+        {
+            str1="eleven";
+        }
+        if(num2==12)
+        {
+            str1="twelve";
+        }
+        if(num2==13)
+        {
+            str1="threen";
+        }
+        if(num2==14)
+        {
+            str1="fourteen";
+        }
+        if(num2==15)
+        {
+            str1="fifteen";
+        }
+        if(num2==16)
+        {
+            str1="sixteen";
+        }
+        if(num2==17)
+        {
+            str1="seventeen";
+        }
+        if(num2==18)
+        {
+            str1="eighteen";
+        }
+        if(num2==19)
+        {
+            str1="nineteen";
+        }
+        if(num2==20)
+        {
+            str1="twenty";
+        }
+        if(num2==30)
+        {
+            str1="thirty";
+        }
+        if(num2==40)
+        {
+            str1="fourty";
+        }
+        if(num2==50)
+        {
+            str1="fifty";
+        }
+        if(num2==60)
+        {
+            str1="sixty";
+        }
+        if(num2==70)
+        {
+            str1="seventy";
+        }
+        if(num2==80)
+        {
+            str1="eighty";
+        }
+        if(num2==90)
+        {
+            str1="ninty";
+        }
+        return str1;
+    }
+    public String cheek(String word)
+    {
+        int flen=0;
+        String frac=word;
+        String frac2="";
+        String frac3="";
+        String frac4="";
+        flen=frac.length();
+        if(flen>2)
+        {
+            frac3=frac.substring(0,2);
+            String per[]=frac3.split("");
+            for(int i=0;i<per.length;i++)
+            {
+                num1=Integer.parseInt(per[0]);
+                frac2=value(num1);
+                num2=Integer.parseInt(per[1]);
+                frac4=value(num2);
+                con1="point"+" "+frac2+frac4;
+            }
+        }
+        else if(flen<=2)
+        {
+            String per[]=frac.split("");
+            for(int i=0;i<per.length;i++)
+            {
+                num1=Integer.parseInt(per[0]);
+                frac2=value(num1);
+                num2=Integer.parseInt(per[1]);
+                frac4=value(num2);
+                con1="point"+" "+frac2+frac4;
+            }
+        }
+        return con1;
+    }
+
+    public void single(String word) {
+        num1 = Integer.parseInt(word);
+        con = value(num1);
+       // System.out.println(con);
+    }
+    public String tentime (String word){
+        int number=Integer.parseInt(word);
+        String parts[]= word.split("");
+        for(int i=0;i<parts.length;i++) {
+            num1 = Integer.parseInt(parts[0]);
+            num2 = Integer.parseInt(parts[1]);
+            inum = num1 * 10;
+            }
+            part1=DoubleValue(inum);
+            if(num2!=0 && number>20 )
+            {
+                part2=value(num2);
+                con=part1+part2;
+                //System.out.println(con);
+            }
+            else if(num2==0)
+            {
+                con=part1;
+                //System.out.println(con);
+            }
+            else if(num2!=0 && number>10 && number<20)
+            {
+                con=DoubleValue(number);
+            }
+            return con;
+        }
+    public String hunderd(String word)
+        {
+            String parts[]= word.split("");
+            for(int i=0;i<parts.length;i++)
+            {
+                num1=Integer.parseInt(parts[0]);
+                num2=Integer.parseInt(parts[1]);
+                inum=num2*10;
+                num3=Integer.parseInt(parts[2]);
+                istr=parts[1]+parts[2];
+            }
+            part1=value(num1);
+            if(num2==1)
+            {
+               inum2=Integer.parseInt(istr);
+               part2=DoubleValue(inum2);
+               con=part1+"hundred"+" "+part2;
+               // System.out.println(con);
+            }
+            else if(num2==0 && num3==0)
+            {
+                con=part1+"hundred";
+                //System.out.println(con);
+            }
+            else if(num2==0 && num3!=0)
+            {
+                part2=value(num3);
+                con=part1+"hundred"+part2;
+               // System.out.println(con);
+            }
+            else
+            {
+                part2 = DoubleValue(inum);
+                part3 = value(num3);
+                con = part1 + "hundred" + " " + part2 + part3;
+              //  System.out.println(con);
+            }
+            return con;
+        }
+        public String thousend(String word, int len) {
+            String con1 = "";
+            if (len == 4) {
+                String part4 = word.substring(0, 1);
+                String part5 = word.substring(1, 4);
+                int num4 = Integer.parseInt(part4);
+                String part6 = value(num4);
+                String istr1 = hunderd(part5);
+                con1 = part6 + "thousend" + " " + istr1;
+                con = con1;
+                String parts2[] = word.split("");
+                for (int i = 0; i < parts2.length; i++) {
+                    if ((parts2[1].equals("0") && parts2[2].equals("0") && parts2[3].equals("0"))) {
+                        con = part6 + "thousend";
+                    } else if (parts2[1].equals("0") && !parts2[2].equals("0")) {
+                        part5 = word.substring(2, 4);
+                        istr1 = tentime(part5);
+                        con = part6 + "thousend" + istr1;
+                    } else if ((parts2[1].equals("0") && parts2[2].equals("0") && !parts2[3].equals("0"))) {
+                        part5 = word.substring(3, 4);
+                        num4 = Integer.parseInt(part5);
+                        istr1 = value(num4);
+                        con = part6 + "thousend" + istr1;
+                    }
+                }
+
+            } else if (len == 5) {
+                String part4 = word.substring(0, 2);
+                String part5 = word.substring(2, 5);
+                String part6 = tentime(part4);
+                String istr1 = hunderd(part5);
+                con1 = part6 + "thousend" + " " + istr1;
+                con = con1;
+                String parts2[] = word.split("");
+                for (int i = 0; i < parts2.length; i++) {
+                    if ((parts2[2].equals("0") && parts2[3].equals("0") && parts2[4].equals("0"))) {
+                        con = part6 + "thousend";
+                    } else if (parts2[2].equals("0") && !parts2[3].equals("0")) {
+                        part5 = word.substring(3, 5);
+                        istr1 = tentime(part5);
+                        con = part6 + "thousend" + istr1;
+                    } else if ((parts2[2].equals("0") && parts2[3].equals("0") && !parts2[4].equals("0"))) {
+                        part5 = word.substring(4, 5);
+                        int num4 = Integer.parseInt(part5);
+                        istr1 = value(num4);
+                        con = part6 + "thousend" + istr1;
+                    }
+                }
+            }
+            return con;
+        }
+        public String lacks(String word,int len)
+        {
+            if(len==6) {
+                String part7 = word.substring(0, 1);
+                String part8 = word.substring(1, 6);
+                int num7 = Integer.parseInt(part7);
+                String part9 = value(num7);
+                String istr2 = thousend(part8, 5);
+                con = part9 + " " + "lacks" + " " + istr2;
+                String parts2[] = word.split("");
+                for (int i = 0; i < parts2.length; i++) {
+                    if (parts2[1].equals("0") && parts2[2].equals("0") && parts2[3].equals("0") && parts2[4].equals("0") && parts2[5].equals("0")) {
+                        con = part9 + " " + "lacks";
+                    } else if (parts2[1].equals("0") && !parts2[2].equals("0")) {
+                        part8 = word.substring(2, 6);
+                        istr2 = thousend(part8, 4);
+                        con = part9 + " " + "lacks" + " " + istr2;
+                    } else if (parts2[1].equals("0") && parts2[2].equals("0") && !parts2[3].equals("0")) {
+                        part8 = word.substring(3, 6);
+                        istr2 = hunderd(part8);
+                        con = part9 + " " + "lacks" + " " + istr2;
+                    } else if (parts2[1].equals("0") && parts2[2].equals("0") && parts2[3].equals("0") && !parts2[4].equals("0")) {
+                        part8 = word.substring(4, 6);
+                        istr2 = tentime(part8);
+                        con = part9 + " " + "lacks" + " " + istr2;
+                    } else if (parts2[1].equals("0") && parts2[2].equals("0") && parts2[3].equals("0") && parts2[4].equals("0") && !parts2[5].equals("0")) {
+                        part8 = word.substring(5, 6);
+                        int num4 = Integer.parseInt(part8);
+                        istr2 = value(num4);
+                        con = part9 + " " + "lacks" + " " + istr2;
+                    }
+                }
+            }
+                else if(len==7)
+                {
+                    String part7 = word.substring(0, 2);
+                    String part8 = word.substring(2,7);
+                    String part9 = tentime(part7);
+                    String istr2 = thousend(part8,5);
+                    con=part9+" "+"lacks"+" "+istr2;
+                    String parts2[] = word.split("");
+                    for (int i = 0; i < parts2.length; i++)
+                    {
+                        if(parts2[2].equals("0") && parts2[3].equals("0") && parts2[4].equals("0") && parts2[5].equals("0") && parts2[6].equals("0"))
+                        {
+                            con=part9+" "+"lacks";
+                        }
+                        else if(parts2[2].equals("0") && !parts2[3].equals("0"))
+                        {
+                            part8 = word.substring(3,7);
+                            istr2 = thousend(part8,4);
+                            con=part9+" "+"lacks"+" "+istr2;
+                        }
+                        else if(parts2[2].equals("0") && parts2[3].equals("0") && !parts2[4].equals("0"))
+                        {
+                            part8 = word.substring(4,7);
+                            istr2 = hunderd(part8);
+                            con=part9+" "+"lacks"+" "+istr2;
+                        }
+                        else if(parts2[2].equals("0") && parts2[3].equals("0") && parts2[4].equals("0") && !parts2[5].equals("0"))
+                        {
+                            part8 = word.substring(5,7);
+                            istr2 = tentime(part8);
+                            con=part9+" "+"lacks"+" "+istr2;
+                        }
+                        else if(parts2[2].equals("0") && parts2[3].equals("0") && parts2[4].equals("0") && parts2[5].equals("0") && !parts2[6].equals("0"))
+                        {
+                            part8 = word.substring(6,7);
+                            int num4 = Integer.parseInt(part8);
+                            istr2 = value(num4);
+                            con=part9+" "+"lacks"+" "+istr2;
+                        }
+                    }
+
+            }
+            return con;
+        }
+        void show()
+        {
+            finalans=con+""+con1;
+            System.out.println(finalans);
+        }
+
+}
+
+public class NunberToWordConvertion {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        while (true) {
+            String word = "";
+            String word1 = "";
+            String sen="";
+            int len = 0;
+            int len2 = 0;
+            int a;
+            convertion c1 = new convertion();
+            System.out.println("ENTER THE WORD VALUE");
+            sen = sc.nextLine();
+            if (sen.contains(".")) {
+                a=sen.indexOf(".");
+                word=sen.substring(0,a);
+                word1=sen.substring(a+1);
+                len=word.length();
+                len2=word1.length();
+                c1.cheek(word1);
+            }
+            else if(!sen.contains("."))
+            {
+                word=sen;
+                len=word.length();
+            }
+            if(len==1)
+            {
+                c1.single(word);
+                c1.show();
+            }
+            else if(len==2) {
+                c1.tentime(word);
+                c1.show();
+            }
+            else if(len==3) {
+                c1.hunderd(word);
+                c1.show();
+            }
+            else if(len==4 || len==5)
+            {
+                c1.thousend(word,len);
+                c1.show();
+            }
+            else if(len==6 || len==7)
+            {
+                c1.lacks(word,len);
+                c1.show();
+            }
+        }
+    }
+}

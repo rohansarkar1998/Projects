@@ -1,0 +1,149 @@
+import java.net.*;
+import java.io.*;
+import java.util.Scanner;
+
+class connection
+{
+    String add;
+    int ipport;
+
+    public void conn(String address,int port)
+
+    {
+        add=address;
+        ipport=port;
+        int len;
+        Scanner sc= new Scanner(System.in);
+        String str="";
+        String str1="";
+        String str2="";
+        System.out.println("ENTER YOUR MASSAGE HERE");
+        str=sc.nextLine();
+        len = str.length();
+        str1=Integer.toString(len);
+        str2=str+"/"+str1;
+        //System.out.println(str2);
+
+        try
+        {
+            Socket s = new Socket(add,ipport);
+            DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+            dout.writeUTF(str2);
+            dout.flush();
+            dout.close();
+            s.close();
+
+        }
+        catch(Exception e)
+        {
+            System.out.print(e);
+        }
+
+
+    }
+}
+public class Client
+{
+    public static void main(String args[])
+    {
+        connection c1=new connection();
+        c1.conn("127.0.0.1",6666);
+        c1.conn("127.0.0.2",6666);
+        c1.conn("127.0.0.3",6666);
+
+    }
+}
+
+
+
+
+
+
+
+
+import java.net.*;
+import java.io.*;
+import java.util.Scanner;
+
+class cheek
+{
+    int ipport;
+    String str3;
+    int len2;
+    int len3;
+
+    public void cheekconn(int port)
+
+    {
+        ipport=port;
+
+        try
+        {
+            ServerSocket ss = new ServerSocket(ipport);
+            Socket s= ss.accept();
+            DataInputStream dis= new DataInputStream(s.getInputStream());
+            String str=(String)dis.readUTF();
+            String str2[]=str.split("/");
+            for(int i=0;i<str2.length;i++)
+            {
+                str3=str2[0];
+                len2=Integer.parseInt(str2[1]);
+            }
+            len3=str3.length();
+            if(len3==len2)
+            {
+                System.out.println("ALL PACKET FINDS");
+                System.out.println("massage ="+str3);
+            }
+            else
+            {
+                System.out.println("PACKET LOST lost");
+            }
+            ss.close();
+
+        }
+        catch(Exception e)
+        {
+            System.out.print(e);
+        }
+
+
+    }
+}
+public class Server
+{
+    public static void main(String args[])
+    {
+        cheek c1 = new cheek();
+        c1.cheekconn(6666);
+        c1.cheekconn(6666);
+        c1.cheekconn(6666);
+    }
+
+
+}
+
+
+
+
+
+> Task :HackerRank:Client.main()
+ENTER YOUR MASSAGE HERE
+INDIA IS A BIG COUNTRY
+ENTER YOUR MASSAGE HERE
+DELHI IS THE CAPITAL OF INDIA
+ENTER YOUR MASSAGE HERE
+WE LOVE INDIA
+
+
+
+
+ Task :HackerRank:Server.main()
+ALL PACKET FINDS
+massage =INDIA IS A BIG COUNTRY
+ALL PACKET FINDS
+massage =DELHI IS THE CAPITAL OF INDIA
+ALL PACKET FINDS
+massage =WE LOVE INDIA
+
+

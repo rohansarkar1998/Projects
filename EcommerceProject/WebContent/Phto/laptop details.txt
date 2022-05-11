@@ -1,0 +1,92 @@
+Laptop 1:
+
+Name - Dell Inspiron 3505 Ryzen 3 Dual Core 3250U - (8 GB/256 GB SSD/Windows 10 Home) Inspiron 3505 Laptop  (15.6 inch, Black, 1.83 kg, With MS Office)
+Price - Rs.34790
+Processor And Memory Features
+Processor Brand AMD
+Processor Name Ryzen 3 Dual Core
+SSD Yes
+SSD Capacity 256 GB
+RAM 8 GB
+RAM Type DDR4
+Processor Variant 3250U
+Clock Speed 2.6 GHz with Turbo Boost Upto 3.5 GHz
+Memory Slots 2 Slots
+Expandable Memory Upto 16 GB
+RAM Frequency 2400 MHz
+Cache 5 MB
+Graphic Processor AMD Radeon
+Number of Cores 2
+Operating System
+OS Architecture 64 bit
+Operating System Windows 10 Home
+System Architecture 64 bit
+
+Laptop 2:
+
+Name - Lenovo Ideapad 3 Ryzen 3 Dual Core 3250U - (4 GB/1 TB HDD/Windows 10 Home) 15ADA05 Laptop  (15.6 inch, Platinum Grey, 1.85 kg, With MS Office)
+Price - Rs.29990
+Processor And Memory Features
+Processor Brand AMD
+Processor Name Ryzen 3 Dual Core
+SSD No
+RAM 4 GB
+RAM Type DDR4
+HDD Capacity 1 TB
+Processor Variant 3250U
+Clock Speed 2.6 GHz with Turbo Boost Upto 3.5 GHz
+Expandable Memory Upto 12 GB
+RAM Frequency 2400 MHz
+Cache 5 MB
+RPM 5400
+Graphic Processor AMD Radeon
+Number of Cores 2
+Operating System
+OS Architecture 64 bit
+Operating System Windows 10 Home
+System Architecture 64 bit
+
+Laptop 3:
+
+Name- Asus Core i3 10th Gen - (4 GB/512 GB SSD/Windows 10 Home) X413JA-EK267T Thin and Light Laptop  (14 inch, Bespoke Black, 1.40 kg)
+Price- Rs.36990
+Processor And Memory Features
+Processor Brand Intel
+Processor Name Core i3
+Processor Generation 10th Gen
+SSD Yes
+SSD Capacity 512 GB
+RAM 4 GB
+RAM Type DDR4
+Processor Variant 1005G1
+Clock Speed 1.2 GHz with Turbo Boost Upto 3.4 GHz
+Cache 4 MB
+Graphic Processor Intel Integrated UHD
+Number of Cores 2
+Operating System
+OS Architecture 64 bit
+Operating System Windows 10 Home
+System Architecture 64 bit
+
+Laptop 4:
+
+Name- HP 15 Ryzen 3 Dual Core 3200U - (4 GB/1 TB HDD/Windows 10 Home) 15-db 1059AU Laptop  (15.6 inch, Natural Silver, 1.9 kg, With MS Office)
+Price- Rs.31490
+Processor And Memory Features
+Processor Brand AMD
+Processor Name Ryzen 3 Dual Core
+SSD No
+RAM 4 GB
+RAM Type DDR4
+HDD Capacity 1 TB
+Processor Variant 3200U
+Clock Speed 2.6 GHz with Turbo Boost Upto 3.5 GHz
+RAM Frequency 2400 MHz
+Cache 5 MB
+RPM 5400
+Graphic Processor AMD Radeon Vega 3
+Number of Cores 2
+Operating System
+OS Architecture 64 bit
+Operating System Windows 10 Home
+System Architecture 64 bit

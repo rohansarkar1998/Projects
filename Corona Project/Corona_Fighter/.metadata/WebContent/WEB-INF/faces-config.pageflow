@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15879245787320" configfile="/Corona_Fighter/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Signin" x="122" y="562" id="pf15880080035473" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15880080035474 pf15880860169819" path="/Signin.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="TestYourself" x="338" y="562" id="pf15880080035475" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf15880080035474" path="/TestYourself.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="StatusCheek" x="122" y="946" id="pf15880849352191" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf15880849352192 pf158808674455211" path="/StatusCheek.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ShowStatus" x="338" y="946" id="pf15880849352193" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf15880849352192" path="/ShowStatus.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Signup" id="pf15880849352194" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15880849352195 pf15880849352196 pf15880851816737" path="/Signup.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Success" id="pf15880849352180" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15880849352195 pf15880849352196" path="/Success.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Fail" id="pf15880851816738" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf15880851816737" path="/Fail.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Failfind" id="pf158808601698110" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf15880860169819" path="/Failfind.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Failcheck" id="pf158808674455212" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf158808674455211" path="/Failcheck.jsp"/>
+  <links id="pf15880080035474" target="pf15880080035475" source="pf15880080035473" outcome="TestYourself"/>
+  <links id="pf15880849352192" target="pf15880849352193" source="pf15880849352191" outcome="ShowStatus"/>
+  <links id="pf15880849352195" target="pf15880849352180" source="pf15880849352194" outcome="Success"/>
+  <links id="pf15880849352196" target="pf15880849352180" source="pf15880849352194" outcome="Success"/>
+  <links id="pf15880851816737" target="pf15880851816738" source="pf15880849352194" outcome="Fail"/>
+  <links id="pf15880860169819" target="pf158808601698110" source="pf15880080035473" outcome="Failfind"/>
+  <links id="pf158808674455211" target="pf158808674455212" source="pf15880849352191" outcome="Failcheck"/>
+</pageflow:Pageflow>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1"> 
+	<persistence-unit name="First_Web_App">
+ 	<class>com.db.tradestore.Entity.Trade</class>
+  	<class>com.db.tradestore.Entity.TradeId</class>
+   -<properties> 
+   		<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   	 	<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+     	<property name="javax.persistence.jdbc.user" value="SYSTEM"/> 
+     	<property name="javax.persistence.jdbc.password" value="system123"/> 
+     	<property name="eclipselink.ddl-generation" value="create-tables"/>
+      	<property name="eclipselink.ddl-generation.output-mode" value="database"/>
+       </properties>
+   </persistence-unit>
+ </persistence>
+
+
+
+<h:outputText value="Enter the roll number"></h:outputText>
+<h:inputText id="rollnum" value="#{StudentBean.rollnum}"></h:inputText>
+<h:outputText value="Enter the name"></h:outputText>
+<h:inputText id="name" value="#{StudentBean.name}"></h:inputText>
